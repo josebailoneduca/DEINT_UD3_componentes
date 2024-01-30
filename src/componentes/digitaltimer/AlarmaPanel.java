@@ -1,28 +1,25 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+LICENCIA JOSE JAVIER BO
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Beans/Bean.java to edit this template
+Lista de paquetes:
  */
 package componentes.digitaltimer;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.JSpinner.DateEditor;
 
 /**
- *
- * @author Bailon
+ * Panel de edicion del atributo Alarma
+ * @author Jose Javier BO
  */
 public class AlarmaPanel extends javax.swing.JPanel implements ActionListener {
 
     private boolean vMostrarSegundos=false;
     private boolean doceHoras = true;
-    
     
     /**
      * Creates new form AlarmaPanel
@@ -68,7 +65,7 @@ public class AlarmaPanel extends javax.swing.JPanel implements ActionListener {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
@@ -78,7 +75,7 @@ public class AlarmaPanel extends javax.swing.JPanel implements ActionListener {
                     .addComponent(inputTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(mostrarSegundos))
-                .addGap(17, 17, 17))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,46 +112,66 @@ public class AlarmaPanel extends javax.swing.JPanel implements ActionListener {
         refrescarEditorHora();
     }
     
+    /**
+     * Retorna los datos a configurar en formato Alarma
+     * @return Los datos configurados
+     */
     public Alarma getSelectedValue(){
+        //recogr datos de la interfaz
         boolean mostrarSegundos=this.mostrarSegundos.isSelected();
         boolean doceHoras = this.inputTipo.getSelectedItem().toString().equals("12 Horas");
         Date dHora = (Date)inputHora.getValue();
         String hora =  Alarma.getHoraFormateada(dHora,doceHoras,mostrarSegundos);
         boolean alarmaActiva=this.alarmaActiva.isSelected();
+        //crear y retornar el objeto Alarma
         return new Alarma(doceHoras, mostrarSegundos, hora, alarmaActiva);
     }
 
+    /**
+     * Escuhas a action performed
+     * @param e 
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         String ac = e.getActionCommand();
         
         switch (ac){
+            //modificar el tipo de 12 o 24h. Actualizan el editor de hora para 
+            //que se adapte alformato
             case "inputTipo": 
                 doceHoras=inputTipo.getSelectedItem().toString().equals("12 Horas");
                 refrescarEditorHora();
                 break;
+            //activar o desactivar la visualización de segundos. Actualizan el editor 
+            //de hora para que se adapte alformato
             case "mostrarSegundos":
                 vMostrarSegundos=mostrarSegundos.isSelected();
-                        
                 refrescarEditorHora();
                 break;
         }
 
     }
 
+    /**
+     * Modifica el DateEditor del spinner de seleccion de la hora 
+     * ajustando su formato segun se muestren o no los segundos y segun sea 12 o 24h
+     */
     private void refrescarEditorHora() {
-        
         String formato= "";
         String fSegundos="";
+        //seccion de segundos para el formato
         if (vMostrarSegundos){
             fSegundos=":ss";
         }
+        
+        //construccion del formato final segun 12 o 24h
         if (doceHoras){
             formato ="hh:mm"+fSegundos+" a";
         }else{
             formato = "HH:mm"+fSegundos;
         }
         
+        //Crear y asignar el DateEditor
         DateEditor de = new JSpinner.DateEditor(inputHora, formato);
         de.getTextField().setEditable( false );
         inputHora.setEditor(de);

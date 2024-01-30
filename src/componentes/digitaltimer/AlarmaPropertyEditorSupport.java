@@ -1,17 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ LICENCIA JOSE JAVIER BO
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Beans/Bean.java to edit this template
+Lista de paquetes:
  */
 package componentes.digitaltimer;
 
 import java.awt.Component;
 import java.beans.PropertyEditorSupport;
-import java.util.Date;
 
 /**
- *
- * @author Bailon
+ * PropertyEditorSupport para la propiedad Alarma del componente DigitalTimer
+* @author Jose Javier BO
  */
 public class AlarmaPropertyEditorSupport extends PropertyEditorSupport {
 
@@ -23,12 +23,15 @@ public class AlarmaPropertyEditorSupport extends PropertyEditorSupport {
     }
 
     
-    
     @Override
     public boolean supportsCustomEditor() {
         return true;
     }
 
+    /**
+     * Construir la string de creación 
+     * @return 
+     */
     @Override
     public String getJavaInitializationString() {
         Alarma al= ap.getSelectedValue();

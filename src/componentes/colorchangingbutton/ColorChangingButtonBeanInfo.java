@@ -9,6 +9,12 @@ package componentes.colorchangingbutton;
 import java.beans.*;
 
 /**
+ * Bean info de ColorChangingButton.
+ *
+ * Importante los atributos: 
+ * colorPorDefecto 
+ * colorSecundario
+ * alternarColores
  *
  * @author Jose Javier BO
  */
@@ -977,5 +983,5 @@ public class ColorChangingButtonBeanInfo extends SimpleBeanInfo {
                 return null;
         }
     }
-    
+
 }

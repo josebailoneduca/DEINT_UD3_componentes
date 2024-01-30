@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+LICENCIA JOSE JAVIER BO
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Beans/Bean.java to edit this template
+Lista de paquetes:
  */
 package pruebacomponentes.digitaltimer;
 
@@ -9,8 +10,20 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Bailon
+ * Prueba del componente DigitalTimer.
+ * 
+ * La prueba consiste en un pequeño panel con el componente en el centro.
+ * 
+ * Debe mostrar la hora. Además tiene configurada una alarma. 
+ * 
+ * Para hacer pruebas editar la propiedad "Alarma" del componente DigitalTimer
+ * y configurarlo como convenga.
+ * 
+ * 
+ * Al editar la propiedad "Alarma" se podrá elegir el formato 12 o 24h , mostrar 
+ * o no los segundos. Elegir la hora para la alarma y activar o desactivar la misma.
+ * 
+ * @author Jose Javier BO
  */
 public class PruebaDitigalTimer extends javax.swing.JFrame {
 
@@ -39,8 +52,8 @@ public class PruebaDitigalTimer extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        digitalTimer.setHorizontalAlignment(0);
-        digitalTimer.setAlarma(new componentes.digitaltimer.Alarma(true, true, "8:26:22 PM", true));
+        digitalTimer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        digitalTimer.setAlarma(new componentes.digitaltimer.Alarma(true, true, "3:59:00 PM", true));
         digitalTimer.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

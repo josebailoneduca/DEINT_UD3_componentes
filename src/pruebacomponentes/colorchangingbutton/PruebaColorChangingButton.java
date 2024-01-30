@@ -11,7 +11,10 @@ import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
 /**
- *
+ * Prueba del componente ColorChangingButton
+ * 
+ * Tiene atributos colorPorDefecto y colorSecundario par configurar los cambios de color
+ * 
  * @author Jose Javier BO
  */
 public class PruebaColorChangingButton extends javax.swing.JFrame implements ActionListener{
@@ -44,7 +47,6 @@ public class PruebaColorChangingButton extends javax.swing.JFrame implements Act
         etiqueta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         colorChangingButton1.setAlternarColores(true);
-        colorChangingButton1.setBackground(new java.awt.Color(102, 51, 255));
         colorChangingButton1.setColorPorDefecto(new java.awt.Color(51, 255, 0));
         colorChangingButton1.setColorSecundario(new java.awt.Color(255, 0, 0));
         colorChangingButton1.setText("PLAY / PAUSE");
@@ -59,20 +61,20 @@ public class PruebaColorChangingButton extends javax.swing.JFrame implements Act
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(120, Short.MAX_VALUE)
+                .addContainerGap(69, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(colorChangingButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(etiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(97, 97, 97))
+                .addGap(61, 61, 61))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(etiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(colorChangingButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addGap(28, 28, 28))
         );
 
         pack();

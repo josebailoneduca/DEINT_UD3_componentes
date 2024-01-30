@@ -7,7 +7,11 @@ Lista de paquetes:
 package pruebacomponentes.limitedjtextfield;
 
 /**
- *
+ * Prueba del componente LimitedJTextField
+ * 
+ * En el atributo Colores se puede configurar los colores de cambio.
+ * En el atributo limiteCaracteres define el limite en el que salta el cambio de colores
+ * 
  * @author Jose Javier BO
  */
 public class PruebaLimitedJTextField extends javax.swing.JFrame {
@@ -32,7 +36,7 @@ public class PruebaLimitedJTextField extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        limitedJTextField2.setColores(new componentes.limitedjtextfield.Colores(new java.awt.Color(255,51,51,255),new java.awt.Color(255,255,255,255)));
+        limitedJTextField2.setColores(new componentes.limitedjtextfield.Colores(new java.awt.Color(153,255,51,255),new java.awt.Color(204,0,51,255)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

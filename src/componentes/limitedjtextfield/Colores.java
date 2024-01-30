@@ -11,7 +11,8 @@ import java.awt.Color;
 import java.io.Serializable;
 
 /**
- *
+ * Clase del atributo "Colores"
+ * Almacena dos colores, uno para el fondo y otro para el texto
  * @author Jose Javier BO
  */
 public class Colores implements Serializable {
