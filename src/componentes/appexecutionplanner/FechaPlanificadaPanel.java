@@ -5,14 +5,15 @@
  */
 package componentes.appexecutionplanner;
 
-import java.text.DateFormat;
 import java.util.Date;
-import javax.swing.JOptionPane;
 
 
 /**
- *
- * @author Bailon
+ * Panel de edicion de la propiedad FechaPlanificada.
+ *  Contiene un JDateChooser con el que seleccionar la fecha
+ * y 3 spinners para introducir hora, minuto, segundo.
+ * 
+ * @author Jose Javier BO
  */
 public class FechaPlanificadaPanel extends javax.swing.JPanel {
 

@@ -5,18 +5,17 @@
  */
 package componentes.appexecutionplanner;
 
-import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 
 
 /**
- *
- * @author Bailon
+ * Panel de edicion de la propiedad AplicacionEjecutable
+ * @author Jose Javier BO
  */
 public class AplicacionEjecutablelPanel extends javax.swing.JPanel {
-
+    
     AplicacionEjecutable aej=new AplicacionEjecutable("");
     
     /**
@@ -24,10 +23,14 @@ public class AplicacionEjecutablelPanel extends javax.swing.JPanel {
      */
     public AplicacionEjecutablelPanel() {
         initComponents();
+        //poner el campo de ruta como no editable
         ruta.setEditable(false);
     }
 
-    
+    /**
+     * Devolver el valor elegido
+     * @return 
+     */
     public AplicacionEjecutable getSelectedValue(){
         return aej;
     }
@@ -76,14 +79,22 @@ public class AplicacionEjecutablelPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /**
+     * Evento de pusacion de boton. Se muestra un filechooser y se recoge la ruta del archivo elegido.
+     * Con esa ruta se genera un AplicacionEjecutable
+     * @param evt 
+     */
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
        JFileChooser fileChooser = new JFileChooser();
         
-        // Establecer filtro para mostrar solo archivos de cierta extensión
+        // Establecer filtro para mostrar solo archivos exe
         FileNameExtensionFilter filtro = new FileNameExtensionFilter("Ejecutables (*.exe)", "exe");
         fileChooser.setFileFilter(filtro);
         fileChooser.setAcceptAllFileFilterUsed(false);
         int returnValue = fileChooser.showOpenDialog(ruta);
+        
+        //si ha dado ok construir dato a partir de seleccion
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             String absRuta = fileChooser.getSelectedFile().getAbsolutePath();
             aej = new AplicacionEjecutable(absRuta);

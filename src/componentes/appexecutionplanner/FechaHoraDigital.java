@@ -10,13 +10,22 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JLabel;
 /**
- *
- * @author Bailon
+ * Componente que muestra una fecha/hora en un formato determinado.
+ * Tiene las propiedades:
+ * - docehoras: true para mostrar la fecha en formato am/pm false para formato 24h
+ * - mostrarSegundos: True para mostrar los segundos, false para no mostrarlos
+ * @author Jose Javier BO
  */
 public class FechaHoraDigital extends JLabel implements Serializable{
+    //ATRIBUTOS
        private boolean  docehoras;
        private boolean mostrarSegundos;
 
+     /**
+      * Constructor
+      * @param docehoras true para 12horas false para 24h
+      * @param mostrarSegundos true para mostrar los segundos, false para no mostrarlos
+      */
     public FechaHoraDigital(boolean docehoras,boolean mostrarSegundos) {
         super();
         this.docehoras=docehoras;
@@ -26,6 +35,7 @@ public class FechaHoraDigital extends JLabel implements Serializable{
 
     }
     
+    //GETTERS Y SETTERS
     public boolean isDocehoras() {
         return docehoras;
     }
@@ -43,8 +53,11 @@ public class FechaHoraDigital extends JLabel implements Serializable{
     }
 
 
+    /**
+     * Actualiza la fecha/hora a mostrar
+     * @param d  Date con la fecha/hora a mostrar
+     */
     public void actualizahora(Date d) {
-
         String patron="dd/MM/YYYY hh:mm:ss a";
         if (docehoras){
             if (!mostrarSegundos)

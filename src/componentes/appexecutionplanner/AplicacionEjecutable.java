@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.Serializable;
 
 /**
- *
+ * Extension de File para propiedad de AppExecutionPlanner
  * @author Jose Javier BO
  */
 public class AplicacionEjecutable extends File implements Serializable {

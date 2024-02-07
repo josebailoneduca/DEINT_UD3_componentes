@@ -9,10 +9,13 @@ import java.awt.Component;
 import java.beans.PropertyEditorSupport;
 
 /**
- *
- * @author Bailon
+ * Property editor support de la propiedad FechaPlanificacion.
+ * 
+ * @author Jose Javier BO
  */
 public class FechaPlanificadaPropertyEditorSupport extends PropertyEditorSupport {
+    
+    //panel editor
     FechaPlanificadaPanel fpp = new FechaPlanificadaPanel();
     
     @Override
@@ -28,7 +31,6 @@ public class FechaPlanificadaPropertyEditorSupport extends PropertyEditorSupport
     @Override
     public String getJavaInitializationString() {
         FechaPlanificada fplanif=fpp.getSelectedValue();
-        
         return String.format("new componentes.appexecutionplanner.FechaPlanificada(new java.util.Date().getTime(),"+fplanif.getHora()+","+fplanif.getMinuto()+","+fplanif.getSegundo())+")";
     }
 

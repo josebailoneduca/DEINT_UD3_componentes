@@ -9,8 +9,8 @@ import java.awt.Component;
 import java.beans.PropertyEditorSupport;
 
 /**
- *
- * @author Bailon
+ * Property editor support de atributo FechaHoraDigital
+ * @author Jose Javier BO
  */
 public class FechaHoraDigitalPropertyEditorSupport extends PropertyEditorSupport {
         FechaHoraDigitalPanel panel = new FechaHoraDigitalPanel();

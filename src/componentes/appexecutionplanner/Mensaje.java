@@ -17,7 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 /**
- *
+ * JDialog extendido para mostrar un mensaje con un color, titulo y contenido del mensaje determinados
+ * 
  * @author Jose Javier BO
  */
 public class Mensaje extends JDialog{

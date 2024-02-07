@@ -8,15 +8,15 @@ package componentes.appexecutionplanner;
 
 
 /**
- *
- * @author Bailon
+ * Panel de edicion del atributo FechaHoraDigital
+ * @author Jose Javier BO
  */
 public class FechaHoraDigitalPanel extends javax.swing.JPanel {
 
     
     
     /**
-     * Creates new form FechaHoraDigitalPanel
+     * Constructor
      */
     public FechaHoraDigitalPanel() {
         initComponents();
@@ -24,10 +24,10 @@ public class FechaHoraDigitalPanel extends javax.swing.JPanel {
 
     
     public FechaHoraDigital getSelectedValue(){
-                //recogr datos de la interfaz
+        //recogr datos de la interfaz
         boolean ms=this.mostrarSegundos.isSelected();
         boolean doceHoras = this.inputTipo.getSelectedItem().toString().equals("12 Horas");
-        //crear y retornar el objeto Alarma
+        //crear y retornar el objeto FechaHoraDigital
         return new FechaHoraDigital(doceHoras, ms);
     }
     

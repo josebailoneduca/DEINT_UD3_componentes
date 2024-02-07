@@ -28,25 +28,44 @@ public class PruebaAppExecutionPlanner extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        appExecutionPlanner1 = new componentes.appexecutionplanner.AppExecutionPlanner();
         appExecutionPlanner2 = new componentes.appexecutionplanner.AppExecutionPlanner();
+        appExecutionPlanner3 = new componentes.appexecutionplanner.AppExecutionPlanner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        appExecutionPlanner1.setAplicacionEjecutable(new componentes.appexecutionplanner.AplicacionEjecutable("C:\\Windows\\write.exe"));
+        appExecutionPlanner1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        appExecutionPlanner1.setFechaHoraDigital(new componentes.appexecutionplanner.FechaHoraDigital(false,true));
+        appExecutionPlanner1.setFechaPlanificada(new componentes.appexecutionplanner.FechaPlanificada(new java.util.Date().getTime(),17,10,20));
+
+        appExecutionPlanner2.setAplicacionEjecutable(new componentes.appexecutionplanner.AplicacionEjecutable("C:\\Windows\\notepad.exe"));
+        appExecutionPlanner2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        appExecutionPlanner2.setFechaHoraDigital(new componentes.appexecutionplanner.FechaHoraDigital(true,true));
+        appExecutionPlanner2.setFechaPlanificada(new componentes.appexecutionplanner.FechaPlanificada(new java.util.Date().getTime(),17,30,0));
+
+        appExecutionPlanner3.setAplicacionEjecutable(new componentes.appexecutionplanner.AplicacionEjecutable("C:\\Windows\\winhlp32.exe"));
+        appExecutionPlanner3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        appExecutionPlanner3.setFechaPlanificada(new componentes.appexecutionplanner.FechaPlanificada(new java.util.Date().getTime(),17,40,5));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addComponent(appExecutionPlanner2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
+            .addComponent(appExecutionPlanner1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+            .addComponent(appExecutionPlanner2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(appExecutionPlanner3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(211, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(appExecutionPlanner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(appExecutionPlanner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62))
+                .addGap(18, 18, 18)
+                .addComponent(appExecutionPlanner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         pack();
@@ -88,6 +107,8 @@ public class PruebaAppExecutionPlanner extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private componentes.appexecutionplanner.AppExecutionPlanner appExecutionPlanner1;
     private componentes.appexecutionplanner.AppExecutionPlanner appExecutionPlanner2;
+    private componentes.appexecutionplanner.AppExecutionPlanner appExecutionPlanner3;
     // End of variables declaration//GEN-END:variables
 }

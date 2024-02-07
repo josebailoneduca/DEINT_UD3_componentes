@@ -10,10 +10,12 @@ import java.awt.Component;
 import java.beans.PropertyEditorSupport;
 
 /**
- *
+ *  Editor support de AplicacionEjecutable
  * @author Jose Javier BO
  */
 public class AplicacionEjecutablePropertyEditorSupport  extends PropertyEditorSupport{
+    
+//panel de edicion de la propiedad
     AplicacionEjecutablelPanel panel = new AplicacionEjecutablelPanel();
 
     @Override
@@ -33,6 +35,11 @@ public class AplicacionEjecutablePropertyEditorSupport  extends PropertyEditorSu
         return String.format("new componentes.appexecutionplanner.AplicacionEjecutable(\"%s\")", rutaEscapada);
     }
 
+    /**
+     * Escapa un string 
+     * @param s String a formatear
+     * @return el string con los caracteres de escape
+     */
     public static String escape(String s){
   return s.replace("\\", "\\\\")
           .replace("\t", "\\t")

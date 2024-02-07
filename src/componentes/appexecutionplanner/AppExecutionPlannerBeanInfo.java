@@ -8,7 +8,7 @@ package componentes.appexecutionplanner;
 import java.beans.*;
 
 /**
- *
+ * Bean info del componente AppExecutionPlanner
  * @author Jose Javier BO
  */
 public class AppExecutionPlannerBeanInfo extends SimpleBeanInfo {
