@@ -21,14 +21,13 @@ public class FechaPlanificadaPanel extends javax.swing.JPanel {
      */
     public FechaPlanificadaPanel() {
         initComponents();
-        dateChooser.setDateFormatString("dd/MM/yyy");
+        dateChooser.setDateFormatString("dd/MM/yyyy");
         dateChooser.setDate(new Date());
     }
 
     
     public FechaPlanificada getSelectedValue(){
         Date date = dateChooser.getDate();
-        String fecha = DateFormat.getDateInstance().format(date);
         int hora=(Integer)spHora.getValue();
         int minutos=(Integer)spMinutos.getValue();
         int segundos=(Integer)spSegundos.getValue();

@@ -30,7 +30,7 @@ public class AplicacionEjecutablePropertyEditorSupport  extends PropertyEditorSu
     public String getJavaInitializationString() {
         AplicacionEjecutable r = panel.getSelectedValue();
         String rutaEscapada=escape(r.getAbsolutePath());
-        return String.format("new componentes.appexecutionplanner.AplicacionEjecutabla(\"%s\")", rutaEscapada);
+        return String.format("new componentes.appexecutionplanner.AplicacionEjecutable(\"%s\")", rutaEscapada);
     }
 
     public static String escape(String s){

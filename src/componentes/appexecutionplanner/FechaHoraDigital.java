@@ -5,13 +5,10 @@
  */
 package componentes.appexecutionplanner;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JLabel;
-import javax.swing.Timer;
 /**
  *
  * @author Bailon
@@ -48,14 +45,14 @@ public class FechaHoraDigital extends JLabel implements Serializable{
 
     public void actualizahora(Date d) {
 
-        String patron="dd/mm/YYYY hh:MM:ss a";
+        String patron="dd/MM/YYYY hh:mm:ss a";
         if (docehoras){
             if (!mostrarSegundos)
-            patron ="dd/mm/YYYY hh:MM a";
+            patron ="dd/MM/YYYY hh:mm a";
         }else{
-            patron ="dd/mm/YYYY HH:mm:ss";
+            patron ="dd/MM/YYYY HH:mm:ss";
             if (!mostrarSegundos)
-                patron="dd/mm/YYYY HH:mm";
+                patron="dd/MM/YYYY HH:mm";
         }
         
         SimpleDateFormat sdf = new SimpleDateFormat(patron);

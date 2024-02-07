@@ -29,7 +29,7 @@ public class FechaPlanificadaPropertyEditorSupport extends PropertyEditorSupport
     public String getJavaInitializationString() {
         FechaPlanificada fplanif=fpp.getSelectedValue();
         
-        return String.format("new componentes.appexecutionplanner.FechaPlanificada(new java.util.Date().getTime(),"+fplanif.getHora()+","+fplanif.getMinuto()+","+fplanif.getSegundo());
+        return String.format("new componentes.appexecutionplanner.FechaPlanificada(new java.util.Date().getTime(),"+fplanif.getHora()+","+fplanif.getMinuto()+","+fplanif.getSegundo())+")";
     }
 
     @Override
