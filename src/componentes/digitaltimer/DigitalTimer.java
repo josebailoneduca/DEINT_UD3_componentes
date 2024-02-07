@@ -56,7 +56,7 @@ public class DigitalTimer extends JLabel implements Serializable, ActionListener
        timer.setActionCommand("pasoReloj");
        timer.start();
        //vaciar el texto
-       this.setText("");
+       this.setText("DigitalTimer");
        
     }
 
