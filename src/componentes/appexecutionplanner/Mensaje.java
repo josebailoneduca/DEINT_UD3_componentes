@@ -9,7 +9,6 @@ package componentes.appexecutionplanner;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Frame;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
