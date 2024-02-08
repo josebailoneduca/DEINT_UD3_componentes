@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -199,10 +200,13 @@ public class AppExecutionPlanner extends JPanel implements Serializable, ActionL
         fechaHoraDigital.actualizahora(d);
         
         //si hay fecha planificada, aplicacion ejecutable, no se ha ejecutado aún y es la hora entonces se ejecuta el programa.
-        if (fechaPlanificada != null && aplicacionEjecutable != null && !ejecutado && esLaHora(d)) {
+        if (fechaPlanificada != null && aplicacionEjecutable != null && !ejecutado && esLaHora(d) && cargado) {
             try {
                 ejecutado = true;
-                Runtime.getRuntime().exec(aplicacionEjecutable.getAbsolutePath());
+                //pasar a string para soportar carpetas con espacios en el nombre
+                File aplicacion = new File (aplicacionEjecutable.getAbsolutePath());
+                String[] comando= {aplicacion.getAbsolutePath()};
+                Runtime.getRuntime().exec(comando);
                 estado.setEstado(EtiquetaEstado.EJECUTADO);
                 new Mensaje(null, estado.getColorActual(), "Programa ejecutado correctamente", "El programa ha sido ejecutado \n" + aplicacionEjecutable.getAbsolutePath()).setVisible(true);
             } catch (IOException ex) {
